@@ -98,11 +98,11 @@ function Menu() {
 
 function Pizza({ pizzObj }) {
   return (
-    <ul className="pizza">
+    <ul className={`pizza ${pizzObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzObj.photoName} alt={pizzObj.name} />
       <h3>{pizzObj.name}</h3>
       <p>{pizzObj.ingredients}</p>
-      <span>{pizzObj.price}</span>
+      <span>{pizzObj.soldOut ? "SOLD OUT" : pizzObj.price}</span>
     </ul>
   );
 }
